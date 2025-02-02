@@ -1,6 +1,8 @@
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Font;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -17,14 +19,15 @@ public class View {
     int screenHeight = 720;
     JTextField input;
     JLabel labelEnter;
+    JLabel labelApp;
     JButton btnSubmit;
 
     public View(){
         frame = new JFrame("View");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(new Dimension(screenWidth, screenHeight));
-        frame.setResizable(true);
-        // frame.setLocationRelativeTo(null);
+        frame.setResizable(false);
+        frame.setLocationRelativeTo(null);
         addContent();
     }
     private void addContent(){
@@ -34,15 +37,23 @@ public class View {
         panel.setLayout(null);
         panel.setBackground(Color.white);
 
+        labelApp = new JLabel("Milk Calculator");
+        labelApp.setFont(labelApp.getFont().deriveFont(30f));
+        labelApp.setBounds(550, 100, 250, 24);
+
         labelEnter = new JLabel("Enter 8 digits code: ");
-        labelEnter.setBounds(640, 700, 200, 15);
+        labelEnter.setFont(labelApp.getFont().deriveFont(18f));
+        labelEnter.setBounds(570, 200, 200, 24);
 
         input = new JTextField();
-        input.setBounds(220, 200, 100, 25);
+        input.setBounds(580, 230, 150, 25);
 
         JButton btnchange = new JButton("submit");
-        btnchange.setBounds(100, 300, 150, 50);
+        btnchange.setBounds(576, 300, 150, 50);
+        btnchange.setFont(btnchange.getFont().deriveFont(20f));
+        btnchange.setFocusPainted(false);
 
+        panel.add(labelApp);
         panel.add(btnchange);
         panel.add(labelEnter);
         panel.add(input);
