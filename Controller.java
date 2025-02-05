@@ -8,7 +8,10 @@ public class Controller {
         View v = new View();
         readCSV();
         getAllCow();
+        BtnActionListener listener = new BtnActionListener(v, this);
+        v.intiateActionListener(listener);
     }
+    
     public void readCSV(){
         try (Scanner input = new Scanner(Paths.get("Cowdata.csv"));) {
             while (input.hasNext()){
@@ -19,8 +22,7 @@ public class Controller {
                     CowType cowtype = convertType(tokens[1]);
                     int years = Integer.parseInt(tokens[2]);
                     int month = Integer.parseInt(tokens[3]);
-                    ModelCow cow = new ModelCow(idnum, cowtype, years, month);
-                    arr.add(cow);
+                    addCowlist(idnum, years, month, cowtype);
                 }
                 catch (Exception e){
                     // System.out.println("At row" + rownum + ", exception named " + e + "...skip");
@@ -31,6 +33,13 @@ public class Controller {
         catch (Exception e) {
             // TODO: handle exception
             e.printStackTrace();
+        }
+
+    }
+    private void addCowlist(int id, int years, int month, CowType type){
+        if (type == CowType.WHITE){
+            WhiteCow cow = new WhiteCow(id, years, month);
+            arr.add(cow);
         }
 
     }
@@ -52,5 +61,12 @@ public class Controller {
         for (ModelCow cow : arr){
             System.out.println(cow);
         }
+    }
+    public void getViewInput(String input){
+        System.out.println("Input: " + input);
+
+    }
+    public void verifyData(){
+
     }
 }
