@@ -95,7 +95,6 @@ public class View {
         milkTextArea.setFont(milkTextArea.getFont().deriveFont(18f));
         milkTextArea.setEditable(false);
 
-
         panel.add(labelhead);
         panel.add(labelhead2);
         panel.add(cowTextArea);
@@ -105,30 +104,7 @@ public class View {
         panel.add(btnSubmit);
         panel.add(labelEnter);
         panel.add(input);
-        
-
-        // JButton btnchange2 = new JButton("change to red");
-        // btnchange2.setBounds(500, 300, 150, 50);
-
-        // panel2 = new JPanel();
-        // panel2.setBounds(0, 0, screenWidth, screenHeight);
-        // panel2.setLayout(null);
-        // panel2.setBackground(Color.blue);
-
-        
-
-        // panel2.add(btnchange2);
-        
-        // btnSubmit.addActionListener(e -> {
-        //     panel.setVisible(false);
-        //     panel2.setVisible(true);
-        // });
-        // btnchange2.addActionListener(e -> {
-        //     panel2.setVisible(false);
-        //     panel.setVisible(true);
-        // });
-
-        
+    
         frame.add(panel);
         frame.pack();
         frame.setVisible(true);
