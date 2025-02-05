@@ -1,8 +1,8 @@
-public class WhiteCow extends ModelCow{
-    CowType type = CowType.WHITE;
-    public WhiteCow(int num, int y, int m){
+public class PinkCow extends ModelCow{
+    CowType type = CowType.PINK;
+    public PinkCow(int num, int y, int m) {
         super(num, y, m);
-
+        //TODO Auto-generated constructor stub
     }
     @Override
     public int getCowId() {
@@ -28,13 +28,12 @@ public class WhiteCow extends ModelCow{
         return this.type;
     }
     public String calculateMilk(){
-        int k = 120;
-        int month = (this.getYears() * 12) + this.getMonth();
-        System.out.println(month);
+        int k = 30;
+        int month = this.getMonth();
         int ans = k - month;
         System.out.println(ans + " l");
-        return "Plain Milk: " + Integer.toString(ans) + " l \n" ;
+        return "Strawberry Milk: " + Integer.toString(ans) + " l \n";
+
     }
-    
     
 }

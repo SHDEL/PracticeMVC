@@ -19,7 +19,7 @@ public class ModelCow {
     }
     @Override
     public String toString() {
-        return "ModelCow [id=" + this.id + ", years=" + this.years + ", month=" + this.month + "]";
+        return "ModelCow [id=" + this.id + ", years=" + this.years + ", month=" + this.month;
     }
     
     
